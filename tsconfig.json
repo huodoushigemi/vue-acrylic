@@ -5,6 +5,8 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "strict": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strictNullChecks": false,
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,

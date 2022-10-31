@@ -3,13 +3,22 @@
   "private": false,
   "version": "0.0.1",
   "type": "module",
-  "files": [],
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huodoushigemi/vue-acrylic"
+  },
+  "author": "灬都是个谜",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ctrl/tinycolor": "^3.4.1",
     "vue": "^3.2.37"
   },
   "devDependencies": {
@@ -17,5 +26,13 @@
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
     "vue-tsc": "^0.40.4"
-  }
+  },
+  "keywords": [
+    "acrylic",
+    "vue",
+    "vue3",
+    "Fluent UI",
+    "win10",
+    "windows"
+  ]
 }
