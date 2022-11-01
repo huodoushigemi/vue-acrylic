@@ -66,8 +66,6 @@ createApp(App).use(Acrylic).mount('#app')
 
 ### 📄 Props
 
-你可以选择在应用的 Acrylic 中添加颜色色调，以展示个性化设计或实现与页面其他元素之间的视觉平衡。 若要显示颜色而非灰度，你需要使用以下属性定义属于你自己的 Acrylic 画笔。
-
 | name          | type              | default   | Description                           |
 | ------------- | ----------------- | --------- | ------------------------------------- |
 | blur          | MaybeRef<number>  | 30        | 模糊大小                              |
