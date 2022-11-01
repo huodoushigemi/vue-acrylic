@@ -22,7 +22,21 @@ function reset() {
 
 <template>
   <div style="width: 790px">
-    <label> <input v-model="isDark" type="checkbox" /> dark </label>
+    <div class="aic">
+      <label class="aic"> <input v-model="isDark" type="checkbox" /> dark </label>
+
+      &emsp;
+
+      <a href="https://github.com/huodoushigemi/vue-acrylic" target="_blank">
+        <img src="https://img.shields.io/github/forks/huodoushigemi/vue-acrylic.svg" />
+      </a>
+
+      &emsp;
+
+      <a href="https://github.com/huodoushigemi/vue-acrylic" target="_blank">
+        <img src="https://img.shields.io/github/stars/huodoushigemi/vue-acrylic.svg" />
+      </a>
+    </div>
 
     <!-- example 1 -->
     <div class="example1" :style="{ color: isDark ? '#fff' : '#333333' }">
@@ -72,6 +86,11 @@ function reset() {
 </template>
 
 <style scoped>
+.aic {
+  display: flex;
+  align-items: center;
+}
+
 .example1 {
   display: grid;
   grid-template-columns: 100px 100px 100px 100px;
