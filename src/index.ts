@@ -1,23 +1,26 @@
-import { App } from 'vue'
+import { App, Directive, Plugin } from 'vue'
 
-import './style'
-import { Acrylic, AcrylicProps, defaultProps, name } from './interface'
-import { createHook } from './utils'
+import { AcrylicProps, name } from './interface'
+import { useAcrylic, setDefaultProps, UseAcrylic } from './useAcrylic'
+export * from './useAcrylic'
+
+type AcrylicHTMLElement = HTMLElement & { __acrylic: UseAcrylic }
+
+export type Acrylic = Partial<Plugin & Directive<AcrylicHTMLElement, AcrylicProps> & { name: string; setDefaultProps: (props: AcrylicProps) => void }>
 
 const Acrylic: Acrylic = {
   name,
   mounted(el, binding) {
-    const hook = (el.__acrylicHook ||= createHook(el))
-    hook.update(binding)
+    el.__acrylic ||= useAcrylic(el, binding.value)
   },
   unmounted(el) {
-    const hook = el.__acrylicHook
-    el.__acrylicHook = undefined
-    hook.unmount()
+    const acrylic = el.__acrylic
+    el.__acrylic = undefined
+    acrylic.unmount()
   },
   updated(el, binding) {
-    const hook = el.__acrylicHook
-    hook.update(binding)
+    const hook = el.__acrylic
+    hook.update(binding.value)
   }
 }
 
@@ -25,8 +28,6 @@ Acrylic.install = (app: App) => {
   app.directive(Acrylic.name, Acrylic)
 }
 
-Acrylic.setDefaultProps = (props: AcrylicProps) => {
-  Object.assign(defaultProps, props)
-}
+Acrylic.setDefaultProps = setDefaultProps
 
 export default Acrylic

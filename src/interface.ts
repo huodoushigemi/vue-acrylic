@@ -1,12 +1,7 @@
-import { Directive, Plugin, reactive, Ref } from 'vue'
+import { reactive, Ref } from 'vue'
 
 export const name = 'acrylic'
 export const prefixCls = `x-${name}`
-
-type AcrylicHook = ReturnType<typeof createHook>
-type AcrylicHTMLElement = HTMLElement & { __acrylicHook: AcrylicHook }
-
-export type Acrylic = Partial<Plugin & Directive<AcrylicHTMLElement, AcrylicProps> & { name: string; setDefaultProps: (props: AcrylicProps) => void }>
 
 type MaybeRef<T> = T | Ref<T>
 
