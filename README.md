@@ -1,25 +1,30 @@
-[![fork](https://img.shields.io/github/forks/huodoushigemi/vue-acrylic.svg?style=)](https://github.com/huodoushigemi/vue-acrylic)
-[![fork](https://img.shields.io/github/stars/huodoushigemi/vue-acrylic.svg?style=)](https://github.com/huodoushigemi/vue-acrylic)
+<center>
+<h2>Vue Acrylic</h2>
+
+[![fork](https://img.shields.io/github/forks/huodoushigemi/vue-acrylic.svg?style=flat-square)](https://github.com/huodoushigemi/vue-acrylic)
+[![stars](https://img.shields.io/github/stars/huodoushigemi/vue-acrylic.svg?style=flat-square)](https://github.com/huodoushigemi/vue-acrylic)
+
+</center>
 
 ![screenshot](https://raw.githubusercontent.com/huodoushigemi/vue-acrylic/main/example/doc/demo1.png)
 ![screenshot](https://raw.githubusercontent.com/huodoushigemi/vue-acrylic/main/example/doc/demo2.png)
 
-### 🌈 Demo
+## 🌈 Demo
 
 - https://huodoushigemi.github.io/vue-acrylic/
 
-### 🚀 Requirements
+## 🚀 Requirements
 
 - Chorme 76+
 - Vue 3+
 
-### ⚙️ Installation
+## ⚙️ Installation
 
 ```coffeescript
 npm i -S vue-acrylic
 ```
 
-### 🦄 Use in JS
+## 🦄 Use in JS
 
 ```html
 <h1 id="acrylic1">ACRYLIC</h1>
@@ -39,7 +44,7 @@ npm i -S vue-acrylic
 </script>
 ```
 
-### 🦄 Use in Vue
+## 🦄 Use in Vue
 
 ```js
 import { createApp } from 'vue'
@@ -64,7 +69,7 @@ createApp(App).use(Acrylic).mount('#app')
 </template>
 ```
 
-### 📄 Props
+## 📄 Props
 
 | name          | type              | default   | Description                           |
 | ------------- | ----------------- | --------- | ------------------------------------- |
@@ -78,10 +83,17 @@ createApp(App).use(Acrylic).mount('#app')
 | disabled      | MaybeRef<boolean> | false     | 是否禁用 Acrylic                      |
 | fallbackColor | MaybeRef<string>  | #e6e6e6e6 | 在禁用状态中替换 Acrylic 的纯色       |
 
-### 🌈 [Inspired by Fluent Design's Acrylic Material](https://learn.microsoft.com/zh-cn/windows/apps/design/style/acrylic)
+## 🌈 [Inspired by Fluent Design's Acrylic Material](https://learn.microsoft.com/zh-cn/windows/apps/design/style/acrylic)
 
 ![](https://learn.microsoft.com/zh-cn/windows/apps/design/style/images/acrylic-recipe-diagram.jpg 'Acrylic')
 
-### ⭐️ Show Your Support
+## ⭐️ Show Your Support
 
 Please give a ⭐️ if this project helped you!
+
+## 👏 Contributing
+
+If you have any questions or requests or want to contribute, please write the issue or give me a Pull Request freely.
+
+[![fork](https://img.shields.io/github/forks/huodoushigemi/vue-acrylic.svg?style=flat-square)](https://github.com/huodoushigemi/vue-acrylic)
+[![fork](https://img.shields.io/github/stars/huodoushigemi/vue-acrylic.svg?style=flat-square)](https://github.com/huodoushigemi/vue-acrylic)

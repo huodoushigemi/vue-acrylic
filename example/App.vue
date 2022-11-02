@@ -27,16 +27,18 @@ function reset() {
 
       &emsp;
 
-      <a href="https://github.com/huodoushigemi/vue-acrylic" target="_blank">
+      <a class="aic" href="https://github.com/huodoushigemi/vue-acrylic" target="_blank">
         <img src="https://img.shields.io/github/forks/huodoushigemi/vue-acrylic.svg" />
       </a>
 
       &emsp;
 
-      <a href="https://github.com/huodoushigemi/vue-acrylic" target="_blank">
+      <a class="aic" href="https://github.com/huodoushigemi/vue-acrylic" target="_blank">
         <img src="https://img.shields.io/github/stars/huodoushigemi/vue-acrylic.svg" />
       </a>
     </div>
+
+    <br />
 
     <!-- example 1 -->
     <div class="example1" :style="{ color: isDark ? '#fff' : '#333333' }">
@@ -105,11 +107,6 @@ function reset() {
 }
 .example1 > div:first-child {
   grid-column-start: span 4;
-}
-
-label {
-  display: inline-block;
-  padding-bottom: 10px;
 }
 
 .example2 {
