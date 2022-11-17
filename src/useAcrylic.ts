@@ -1,9 +1,9 @@
-import { unref, UnwrapRef, watch, watchEffect, watchPostEffect } from 'vue'
+import { unref, watchPostEffect } from 'vue'
 import tinycolor from '@ctrl/tinycolor'
 
 import { setVarsOnNode } from './utils/useCssVars'
 import { mapValues } from './utils/lodash'
-import { AcrylicProps, defaultProps, prefixCls } from './interface'
+import { AcrylicProps, ResolvedAcrylicProps, defaultProps, prefixCls, MaybeGetterRef } from './interface'
 import './style.css'
 
 // =====================================================================================
@@ -17,6 +17,8 @@ export function setDefaultProps(props: AcrylicProps) {
 export type UseAcrylic = ReturnType<typeof useAcrylic>
 
 export function useAcrylic(el: HTMLElement, props?: AcrylicProps) {
+  const resolveUnref = <T>(val: MaybeGetterRef<T>): T => (typeof val === 'function' ? (val as any)(el) : unref(val))
+
   let removeVarsOnNode: () => void
 
   // 监听默认属性变化，触发更新
@@ -25,7 +27,7 @@ export function useAcrylic(el: HTMLElement, props?: AcrylicProps) {
   })
 
   function update($props?: AcrylicProps) {
-    const _props = mapValues({ ...defaultProps, ...props, ...$props }, unref) as { [K in keyof AcrylicProps]: UnwrapRef<AcrylicProps[K]> }
+    const _props = mapValues({ ...defaultProps, ...props, ...$props }, resolveUnref) as ResolvedAcrylicProps
     el.classList.add(prefixCls)
 
     if (!_props.disabled) {

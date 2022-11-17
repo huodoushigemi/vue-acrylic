@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, watchEffect, reactive } from 'vue'
+import { ref, computed, reactive } from 'vue'
 
 const isDark = ref(true)
 const color = computed(() => (isDark.value ? '#333333' : '#e6e6e6'))
@@ -42,10 +42,10 @@ function reset() {
 
     <!-- example 1 -->
     <div class="example1" :style="{ color: isDark ? '#fff' : '#333333' }">
-      <div v-acrylic="{ color, opacity: 0.6 }">60%</div>
-      <div v-acrylic="{ color, opacity: 1 }">100%</div>
-      <div v-acrylic="{ color, opacity: 0.8 }">80%</div>
-      <div v-acrylic="{ color, opacity: 0.4 }">40%</div>
+      <div v-acrylic="{ opacity: 0.6 }">60%</div>
+      <div v-acrylic="{ opacity: 1 }">100%</div>
+      <div v-acrylic="{ opacity: 0.8 }">80%</div>
+      <div v-acrylic="{ opacity: 0.4 }">40%</div>
       <div v-acrylic="{ color: '#ff5e00', opacity: 0.6 }">60%</div>
     </div>
 

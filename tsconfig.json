@@ -6,6 +6,7 @@
     "moduleResolution": "Node",
     "strict": true,
     "suppressImplicitAnyIndexErrors": true,
+    "noImplicitAny": false,
     "strictNullChecks": false,
     "jsx": "preserve",
     "sourceMap": true,

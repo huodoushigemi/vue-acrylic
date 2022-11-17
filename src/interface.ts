@@ -1,12 +1,17 @@
-import { reactive, Ref } from 'vue'
+import { reactive, Ref, UnwrapRef } from 'vue'
 
 export const name = 'acrylic'
 export const prefixCls = `x-${name}`
 
-type MaybeRef<T> = T | Ref<T>
+export type MaybeGetterRef<T> = ((el: HTMLElement) => T) | Ref<T> | T
+export type ResolvedUnref<T> = T extends (...args) => infer V ? V : UnwrapRef<T>
 
 export type AcrylicProps = Partial<{
-  [K in keyof typeof defaultProps]: MaybeRef<typeof defaultProps[K]>
+  [K in keyof typeof defaultProps]: MaybeGetterRef<typeof defaultProps[K]>
+}>
+
+export type ResolvedAcrylicProps = Partial<{
+  [K in keyof AcrylicProps]: ResolvedUnref<AcrylicProps[K]>
 }>
 
 // 默认属性

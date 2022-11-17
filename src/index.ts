@@ -1,15 +1,12 @@
-import { App, Directive, Plugin } from 'vue'
+import { App, Directive } from 'vue'
 
 import { AcrylicProps, name } from './interface'
-import { useAcrylic, setDefaultProps, UseAcrylic } from './useAcrylic'
+import { UseAcrylic, useAcrylic, setDefaultProps } from './useAcrylic'
 export * from './useAcrylic'
 
 type AcrylicHTMLElement = HTMLElement & { __acrylic: UseAcrylic }
 
-export type Acrylic = Partial<Plugin & Directive<AcrylicHTMLElement, AcrylicProps> & { name: string; setDefaultProps: (props: AcrylicProps) => void }>
-
-const Acrylic: Acrylic = {
-  name,
+export const AcrylicDirective: Directive<AcrylicHTMLElement, AcrylicProps> = {
   mounted(el, binding) {
     el.__acrylic ||= useAcrylic(el, binding.value)
   },
@@ -24,10 +21,12 @@ const Acrylic: Acrylic = {
   }
 }
 
-Acrylic.install = (app: App) => {
-  app.directive(Acrylic.name, Acrylic)
+const Acrylic = {
+  name,
+  setDefaultProps,
+  install(app: App) {
+    app.directive(Acrylic.name, AcrylicDirective)
+  }
 }
-
-Acrylic.setDefaultProps = setDefaultProps
 
 export default Acrylic
