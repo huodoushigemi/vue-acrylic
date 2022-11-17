@@ -1,7 +1,8 @@
 {
   "name": "vue-acrylic",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
+  "module": "./src/index.ts",
   "type": "module",
   "files": [
     "src"
