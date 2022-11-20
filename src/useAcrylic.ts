@@ -28,12 +28,14 @@ export function useAcrylic(el: HTMLElement, props?: AcrylicProps) {
 
   function update($props?: AcrylicProps) {
     const _props = mapValues({ ...defaultProps, ...props, ...$props }, resolveUnref) as ResolvedAcrylicProps
+    const color = _props.color ?? resolveUnref(props.color) ?? resolveUnref(defaultProps.color)
+
     el.classList.add(prefixCls)
 
     if (!_props.disabled) {
       removeVarsOnNode = setVarsOnNode(el, {
         xAcrylicBackdropFilter: `blur(${_props.blur}px) brightness(${_props.brightness}) saturate(${_props.saturate})`,
-        xAcrylicBackgroundColor: tinycolor(_props.color).setAlpha(_props.opacity).toHex8String(),
+        xAcrylicBackgroundColor: tinycolor(color).setAlpha(_props.opacity).toHex8String(),
         xAcrylicNoiseSize: `${_props.noiseSize}px`,
         xAcrylicNoiseOpacity: _props.noiseOpacity
       })
